@@ -6,8 +6,6 @@ $archivo = $_FILES['archivo_subido']['tmp_name'];
 
 $lineas = file($archivo, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-// var_dump($lineas);
-
 $perfiles = [];
 $nombre_perfil = '';
 $mac_perfil = '';
@@ -32,7 +30,5 @@ foreach ($perfiles as $perfil) {
     $texto .= "    set color 2\n";
     $texto .= "next\n";
 }
-
-var_dump($texto);
 
 $new_file = file_put_contents('mac-resultado.txt', $texto);
